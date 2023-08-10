@@ -1,6 +1,6 @@
 import {Image, ImageStyle, StyleSheet} from 'react-native';
 import React from 'react';
-import {screenHeight} from '../../utils/helper';
+import {screenHeight, screenWidth} from '../../utils/helper';
 
 type Props = {
   source: any;
@@ -18,7 +18,7 @@ export default CustomImage;
 
 const styles = StyleSheet.create({
   loginBanner: {
-    width: '100%',
+    width: screenWidth,
     height: screenHeight * 0.5,
   },
   icon: {

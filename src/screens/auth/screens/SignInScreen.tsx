@@ -33,12 +33,20 @@ function App(): JSX.Element {
   };
 
   return (
-    <CustomView scrollable>
+    <CustomView>
       <Animated.View
         style={{
+          transform: [
+            {
+              scaleY: imgAnimValue.interpolate({
+                inputRange: [0, 100],
+                outputRange: [0, 2],
+              }),
+            },
+          ],
           height: imgAnimValue.interpolate({
             inputRange: [0, 100],
-            outputRange: ['0%', '50%'],
+            outputRange: ['0%', '100%'],
           }),
         }}>
         <CustomImage
