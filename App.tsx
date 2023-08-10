@@ -5,10 +5,17 @@
  * @format
  */
 
-import React from 'react';
-import {CustomText, CustomImage, CustomView} from './src/components/atoms';
+import React, {useState} from 'react';
+import {
+  CustomText,
+  CustomImage,
+  CustomView,
+  CustomInput,
+} from './src/components/atoms';
+import {SafeAreaView} from 'react-native';
 
 function App(): JSX.Element {
+  const [text, setText] = useState('');
   return (
     <CustomView>
       <CustomImage
@@ -28,6 +35,12 @@ function App(): JSX.Element {
         Mua sắm và trải nghiệm sản phẩm cây trồng cùng phụ kiện độc đáo duy nhất
         tại Việt Nam
       </CustomText>
+      <CustomInput
+        placeHolder="Email"
+        value={text}
+        onChangeText={setText}
+        marginTop={12}
+      />
     </CustomView>
   );
 }
