@@ -6,9 +6,7 @@
  */
 
 import React from 'react';
-import CustomText from './src/components/atoms/CustomText';
-import CustomImage from './src/components/atoms/CustomImage';
-import CustomView from './src/components/atoms/CustomView';
+import {CustomText, CustomImage, CustomView} from './src/components/atoms';
 
 function App(): JSX.Element {
   return (
