@@ -10,6 +10,8 @@ type Props = {
   marginTop?: number;
   maxWidth?: number | string;
   hasLineHeight?: boolean;
+  textDecor?: string;
+  onPress?: any;
   children: string;
 };
 
@@ -21,6 +23,8 @@ const CustomText = ({
   marginTop,
   maxWidth,
   hasLineHeight,
+  textDecor,
+  onPress,
 }: Props) => {
   let color = {color: textColor ? light[textColor] : light.textColor};
   let bold = isBold ? {fontWeight: 700} : {};
@@ -28,13 +32,15 @@ const CustomText = ({
   let fontSize = {
     fontSize: textSize ? textStyles[textSize] : textStyles.text_normal,
   };
-  let mTop = marginTop ? {marginTop: marginTop} : {marginTop: 8};
+  let mTop = marginTop != null ? {marginTop: marginTop} : {marginTop: 8};
   let maxW = maxWidth ? {maxWidth: maxWidth} : {};
   let lineHeight = hasLineHeight ? {lineHeight: 29} : {};
   let justifyText = {textAlign: 'justify'};
+  let textDecoration = textDecor ? {textDecorationLine: textDecor} : {};
 
   return (
     <Text
+      onPress={onPress}
       style={
         [
           color,
@@ -45,6 +51,7 @@ const CustomText = ({
           maxW,
           lineHeight,
           justifyText,
+          textDecoration,
         ] as TextStyle
       }>
       {children}

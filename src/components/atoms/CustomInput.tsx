@@ -7,9 +7,18 @@ type Props = {
   onChangeText?: any;
   placeHolder?: string;
   marginTop?: number;
+  onFocus?: any;
+  onBlur?: any;
 };
 
-const CustomInput = ({value, onChangeText, placeHolder, marginTop}: Props) => {
+const CustomInput = ({
+  value,
+  onChangeText,
+  placeHolder,
+  marginTop,
+  onFocus,
+  onBlur,
+}: Props) => {
   let mTop = {marginTop: marginTop};
   return (
     <TextInput
@@ -17,6 +26,8 @@ const CustomInput = ({value, onChangeText, placeHolder, marginTop}: Props) => {
       onChangeText={onChangeText}
       value={value}
       placeholder={placeHolder}
+      onFocus={onFocus}
+      onBlur={onBlur}
       editable={true}
     />
   );
