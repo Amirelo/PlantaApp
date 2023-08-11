@@ -12,7 +12,7 @@ type Props = {
   hasLineHeight?: boolean;
   textDecor?: string;
   onPress?: any;
-  children: string;
+  children: any;
 };
 
 const CustomText = ({
@@ -35,7 +35,7 @@ const CustomText = ({
   let mTop = marginTop != null ? {marginTop: marginTop} : {marginTop: 8};
   let maxW = maxWidth ? {maxWidth: maxWidth} : {};
   let lineHeight = hasLineHeight ? {lineHeight: 29} : {};
-  let justifyText = {textAlign: 'justify'};
+  let justifyText = {textAlign: 'center'};
   let textDecoration = textDecor ? {textDecorationLine: textDecor} : {};
 
   return (

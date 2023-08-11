@@ -1,13 +1,16 @@
 import React from 'react';
 
-import AuthNavigation from './src/screens/auth/AuthNavigation';
-import {NavigationContainer} from '@react-navigation/native';
+import {AuthContextProvider} from './src/screens/auth/AuthContext';
+import {MainContextProvider} from './src/screens/main/MainContext';
+import AppNavigation from './src/navigation/AppNavigation';
 
 function App(): JSX.Element {
   return (
-    <NavigationContainer>
-      <AuthNavigation />
-    </NavigationContainer>
+    <AuthContextProvider>
+      <MainContextProvider>
+        <AppNavigation />
+      </MainContextProvider>
+    </AuthContextProvider>
   );
 }
 

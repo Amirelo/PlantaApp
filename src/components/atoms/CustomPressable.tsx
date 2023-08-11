@@ -27,6 +27,7 @@ const CustomPressable = ({
   return (
     <Pressable
       onPress={onPress}
+      disabled={disable}
       style={[styles.default, bgColor, mTop] as ViewStyle}>
       {children}
     </Pressable>

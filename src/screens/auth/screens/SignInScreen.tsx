@@ -10,6 +10,7 @@ import {Animated} from 'react-native';
 
 function App(): JSX.Element {
   const [email, setEmail] = useState('');
+  const [showTerms, setShowTerms] = useState(false);
 
   const onSignInPressed = () => {};
 
@@ -22,6 +23,7 @@ function App(): JSX.Element {
       duration: 1000,
       useNativeDriver: false,
     }).start();
+    setShowTerms(true);
   };
 
   const showAnim = () => {
@@ -30,6 +32,7 @@ function App(): JSX.Element {
       duration: 1000,
       useNativeDriver: false,
     }).start();
+    setShowTerms(false);
   };
 
   return (
@@ -76,7 +79,11 @@ function App(): JSX.Element {
         onFocus={hideAnim}
         onBlur={showAnim}
       />
-      <CustomPressable marginTop={20} onPress={onSignInPressed}>
+      <CustomPressable
+        type="secondary"
+        marginTop={20}
+        onPress={onSignInPressed}
+        disable={email ? false : true}>
         <CustomText
           textColor="textContrastColor"
           textSize="text_subtitle"
@@ -90,6 +97,22 @@ function App(): JSX.Element {
         onPress={onNotNowPressed}>
         Chưa phải bây giờ
       </CustomText>
+
+      {showTerms ? (
+        <CustomText marginTop={100} maxWidth={'80%'}>
+          Bằng việc đăng ký, bạn đồng ý với{' '}
+          <CustomText textColor="primaryColor" textDecor="underline">
+            Điều khoản
+          </CustomText>{' '}
+          và{' '}
+          <CustomText textColor="primaryColor" textDecor="underline">
+            Chính sách bảo mật
+          </CustomText>{' '}
+          chúng tôi.
+        </CustomText>
+      ) : (
+        <></>
+      )}
     </CustomView>
   );
 }
