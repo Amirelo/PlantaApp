@@ -7,12 +7,17 @@ import {
   CustomPressable,
 } from '../../../components/atoms';
 import {Animated} from 'react-native';
+import {useAuthContext} from '../AuthContext';
 
 function App(): JSX.Element {
   const [email, setEmail] = useState('');
   const [showTerms, setShowTerms] = useState(false);
 
-  const onSignInPressed = () => {};
+  const {userLogin} = useAuthContext();
+
+  const onSignInPressed = () => {
+    userLogin();
+  };
 
   const onNotNowPressed = () => {};
 

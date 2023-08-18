@@ -56,4 +56,10 @@ const styles = StyleSheet.create({
   secondary_disabled: {
     backgroundColor: light.secondaryOffColor,
   },
+  white: {
+    backgroundColor: light.textContrastColor,
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+  },
 });
