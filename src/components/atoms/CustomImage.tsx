@@ -50,4 +50,8 @@ const styles = StyleSheet.create({
     width: 24,
     height: 24,
   },
+  productItem: {
+    width: 155,
+    height: 134,
+  },
 });

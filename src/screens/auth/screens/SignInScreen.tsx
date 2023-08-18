@@ -53,7 +53,7 @@ function App(): JSX.Element {
             },
           ],
           height: imgAnimValue.interpolate({
-            inputRange: [0, 100],
+            inputRange: [0, 90],
             outputRange: ['0%', '100%'],
           }),
         }}>
