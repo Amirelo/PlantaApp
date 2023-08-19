@@ -68,7 +68,7 @@ const HomeScreen = () => {
   // console.log('Reference:', reference);
 
   return (
-      <CustomView scrollable>
+      <CustomView bgColor='backgroundColor' scrollable>
         <CustomView height={250} width={'80%'}>
           <CustomImage
             position="absolute"
@@ -149,7 +149,7 @@ const HomeScreen = () => {
           <FlatList
             data={fakeData}
             style={{marginTop: 16}}
-            contentContainerStyle={{gap: 8}}
+            contentContainerStyle={{gap: 8, marginBottom: 16}}
             scrollEnabled={false}
             renderItem={({item}) => {
               return (

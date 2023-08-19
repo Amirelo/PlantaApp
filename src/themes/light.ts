@@ -5,4 +5,5 @@ export const light = {
   primaryOffColor: '#ABABAB',
   secondaryColor: '#221F1F',
   secondaryOffColor: '#7D7B7B',
+  backgroundColor: '#ffffff',
 };
