@@ -1,13 +1,13 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import { CustomView } from '../../../components/atoms'
+import { CustomInput, CustomView } from '../../../components/atoms'
+import { ic_search } from '../../../assets/images'
 
-type Props = {}
 
-const ExploreScreen = (props: Props) => {
+const ExploreScreen = () => {
   return (
-    <CustomView bgColor='backgroundColor'>
-
+    <CustomView hasFlex bgColor='backgroundColor'>
+      <CustomInput placeHolder='Search' source={ic_search} />
     </CustomView>
   )
 }

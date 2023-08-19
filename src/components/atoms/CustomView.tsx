@@ -13,6 +13,7 @@ type Props = {
   alignItems?: string;
   borderRad?: number;
   bgColor?: keyof typeof light;
+  hasFlex?: boolean;
 };
 
 const CustomView = ({
@@ -25,6 +26,7 @@ const CustomView = ({
   alignItems,
   borderRad,
   bgColor,
+  hasFlex,
 }: Props) => {
   const row = hasRow ? {flexDirection: 'row', flex: 0} : {};
   const justifyContent = justify ? {justifyContent: justify} : {};
@@ -33,10 +35,11 @@ const CustomView = ({
   const alignI = alignItems ? {alignItems: alignItems} : {alignItems: 'center'};
   const borderRadius = borderRad ? {borderRadius: borderRad}: {};
   const backgroundColor = bgColor ? {backgroundColor: light[bgColor]} : {};
+  const flex = hasFlex ? {flex: 1}:{};
   return scrollable ? (
     <ScrollView
     scrollEnabled={true}
-      style={[styles.default2, row, w, h, borderRadius, backgroundColor] as ViewStyle}
+      style={[styles.default2, row, w, h, borderRadius, backgroundColor, flex] as ViewStyle}
       contentContainerStyle={
         [styles.default, justifyContent, alignI] as ViewStyle
       }>
@@ -45,7 +48,7 @@ const CustomView = ({
   ) : (
     <View
       style={
-        [styles.viewDefault, row, justifyContent, w, h, alignI, borderRadius, backgroundColor] as ViewStyle
+        [styles.viewDefault, row, justifyContent, w, h, alignI, borderRadius, backgroundColor, flex] as ViewStyle
       }>
       {children}
     </View>
@@ -66,6 +69,6 @@ const styles = StyleSheet.create({
   },
   viewDefault: {
     alignItems: 'center',
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
 });

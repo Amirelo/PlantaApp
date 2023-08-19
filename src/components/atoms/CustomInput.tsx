@@ -1,6 +1,8 @@
 import {StyleSheet, TextInput, TextStyle} from 'react-native';
 import React from 'react';
 import {screenWidth} from '../../utils/helper';
+import CustomImage from './CustomImage';
+import CustomView from './CustomView';
 
 type Props = {
   value?: string;
@@ -9,6 +11,7 @@ type Props = {
   marginTop?: number;
   onFocus?: any;
   onBlur?: any;
+  source?: string;
 };
 
 const CustomInput = ({
@@ -18,18 +21,22 @@ const CustomInput = ({
   marginTop,
   onFocus,
   onBlur,
+  source,
 }: Props) => {
-  let mTop = {marginTop: marginTop};
+  const mTop = {marginTop: marginTop};
   return (
-    <TextInput
-      style={[styles.default, mTop] as TextStyle}
-      onChangeText={onChangeText}
-      value={value}
-      placeholder={placeHolder}
-      onFocus={onFocus}
-      onBlur={onBlur}
-      editable={true}
-    />
+    <CustomView hasRow>
+      <TextInput
+        style={[styles.default, mTop] as TextStyle}
+        onChangeText={onChangeText}
+        value={value}
+        placeholder={placeHolder}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        editable={true}
+      />
+      {source ? <CustomImage source={source} type='icon' customStyles={{position: 'absolute', right:0}} /> : <></>}
+    </CustomView>
   );
 };
 

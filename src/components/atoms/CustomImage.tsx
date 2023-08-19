@@ -12,6 +12,7 @@ type Props = {
   position?: string;
   tintColor?: keyof typeof light;
   positionTop?: number | string;
+  customStyles?: any;
 };
 
 const CustomImage = ({
@@ -23,6 +24,7 @@ const CustomImage = ({
   position,
   positionTop,
   tintColor,
+  customStyles,
 }: Props) => {
   const src = linkType == 'uri' ? {uri: source} : source;
   const imageSize = type ? styles[type] : styles.icon;
@@ -33,7 +35,9 @@ const CustomImage = ({
   const tintCol = tintColor ? {tintColor: light[tintColor]} : {};
   return (
     <Image
-      style={[imageSize, w, h, pos, posTop, tintCol] as ImageStyle}
+      style={
+        [imageSize, w, h, pos, posTop, tintCol, customStyles] as ImageStyle
+      }
       source={src}
     />
   );
@@ -54,8 +58,8 @@ const styles = StyleSheet.create({
     width: 155,
     height: 134,
   },
-  productComboItem:{
-    width:108,
-    height:134,
-  }
+  productComboItem: {
+    width: 108,
+    height: 134,
+  },
 });
