@@ -1,7 +1,7 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 import {CustomImage, CustomText, CustomView} from '../atoms';
-import { screenWidth } from '../../utils/helper';
+import {screenWidth} from '../../utils/helper';
 
 type Props = {
   name: string;
@@ -11,8 +11,8 @@ type Props = {
 
 const ItemProductCombo = ({name, description, source}: Props) => {
   return (
-    <CustomView width={screenWidth *0.9} hasRow>
-      <CustomView width={screenWidth*0.5}>
+    <CustomView borderRad={8} width={'100%'} hasRow>
+      <CustomView width={screenWidth * 0.5}>
         <CustomText>{name}</CustomText>
         <CustomText>{description}</CustomText>
       </CustomView>
