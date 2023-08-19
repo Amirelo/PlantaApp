@@ -1,12 +1,20 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import HomeScreen from './screens/HomeScreen';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import ExploreScreen from './screens/ExploreScreen';
-import NotificationScreen from './screens/NotificationScreen';
-import ProfileScreen from './screens/ProfileScreen';
 import {CustomImage} from '../../components/atoms';
-import {ic_back, ic_bell, ic_home, ic_search, ic_user} from '../../assets/images';
+import {
+  ic_back,
+  ic_bell,
+  ic_home,
+  ic_search,
+  ic_user,
+} from '../../assets/images';
+import {
+  HomeScreen,
+  ExploreScreen,
+  NotificationScreen,
+  ProfileScreen,
+} from './screens';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -24,7 +32,7 @@ const tabNav = () => {
       />
       <Tab.Screen
         options={{
-          headerLeft: ()=> <CustomImage source={ic_back} type="icon" />,
+          headerLeft: () => <CustomImage source={ic_back} type="icon" />,
           headerTitleAlign: 'center',
           tabBarIcon: () => <CustomImage source={ic_search} type="icon" />,
         }}
@@ -33,7 +41,7 @@ const tabNav = () => {
       />
       <Tab.Screen
         options={{
-          headerLeft: ()=> <CustomImage source={ic_back} type="icon" />,
+          headerLeft: () => <CustomImage source={ic_back} type="icon" />,
           headerTitleAlign: 'center',
           tabBarIcon: () => <CustomImage source={ic_bell} type="icon" />,
         }}
@@ -42,7 +50,7 @@ const tabNav = () => {
       />
       <Tab.Screen
         options={{
-          headerLeft: ()=> <CustomImage source={ic_back} type="icon" />,
+          headerLeft: () => <CustomImage source={ic_back} type="icon" />,
           headerTitleAlign: 'center',
           tabBarIcon: () => <CustomImage source={ic_user} type="icon" />,
         }}

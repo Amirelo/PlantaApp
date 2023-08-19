@@ -1,11 +1,9 @@
-import {View, Text} from 'react-native';
 import React from 'react';
 import {CustomInput, CustomView} from '../../../components/atoms';
 import {ic_search} from '../../../assets/images';
 import {FlatList} from 'react-native-gesture-handler';
 import {useMainContext} from '../MainContext';
-import ItemProduct from '../../../components/molecules/ItemProduct';
-import ItemProductVertical from '../../../components/molecules/ItemProductVertical';
+import { ItemProductVertical } from '../../../components/molecules';
 
 const ExploreScreen = () => {
   const [listProducts, setListProducts] = React.useState();

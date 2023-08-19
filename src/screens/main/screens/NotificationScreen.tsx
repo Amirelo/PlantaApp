@@ -1,14 +1,13 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React from 'react';
+import {CustomText, CustomView} from '../../../components/atoms';
 
-type Props = {}
 
-const NotificationScreen = (props: Props) => {
+const NotificationScreen = () => {
   return (
-    <View>
-      <Text>NotificationScreen</Text>
-    </View>
-  )
-}
+    <CustomView hasFlex bgColor="backgroundColor">
+      <CustomText>Something</CustomText>
+    </CustomView>
+  );
+};
 
-export default NotificationScreen
+export default NotificationScreen;

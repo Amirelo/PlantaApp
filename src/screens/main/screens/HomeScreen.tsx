@@ -7,10 +7,10 @@ import {
 } from '../../../components/atoms';
 import {ic_arrow_right, ic_cart} from '../../../assets/images';
 import {screenWidth} from '../../../utils/helper';
-import ItemProduct from '../../../components/molecules/ItemProduct';
 import {FlatList} from 'react-native-gesture-handler';
-import ItemProductCombo from '../../../components/molecules/ItemProductCombo';
 import {useMainContext} from '../MainContext';
+import {ItemProduct, ItemProductCombo} from '../../../components/molecules';
+
 // import database from '@react-native-firebase/database';
 
 const HomeScreen = () => {

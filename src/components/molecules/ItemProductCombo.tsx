@@ -1,4 +1,3 @@
-import {View, Text} from 'react-native';
 import React from 'react';
 import {CustomImage, CustomText, CustomView} from '../atoms';
 import {screenWidth} from '../../utils/helper';

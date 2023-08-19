@@ -1,14 +1,14 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React from 'react';
+import {CustomText, CustomView} from '../../../components/atoms';
 
-type Props = {}
+type Props = {};
 
 const ProfileScreen = (props: Props) => {
   return (
-    <View>
-      <Text>ProfileScreen</Text>
-    </View>
-  )
-}
+    <CustomView hasFlex bgColor="backgroundColor">
+      <CustomText>Something</CustomText>
+    </CustomView>
+  );
+};
 
-export default ProfileScreen
+export default ProfileScreen;
