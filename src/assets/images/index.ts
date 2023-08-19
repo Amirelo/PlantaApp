@@ -4,3 +4,4 @@ export const ic_home = require('./Home.png');
 export const ic_search = require('./Search.png');
 export const ic_bell = require('./Bell.png');
 export const ic_user = require('./User.png');
+export const ic_back = require('./chevron-left.png');
