@@ -24,13 +24,13 @@ const CustomImage = ({
   positionTop,
   tintColor,
 }: Props) => {
-  let src = linkType == 'uri' ? {uri: source} : source;
-  let imageSize = type ? styles[type] : styles.icon;
-  let w = width ? {width: width} : {};
-  let h = height ? {height: height} : {};
-  let pos = position ? {position: position} : {};
-  let posTop = positionTop ? {top: positionTop} : {};
-  let tintCol = tintColor ? {tintColor: light[tintColor]} : {};
+  const src = linkType == 'uri' ? {uri: source} : source;
+  const imageSize = type ? styles[type] : styles.icon;
+  const w = width ? {width: width} : {};
+  const h = height ? {height: height} : {};
+  const pos = position ? {position: position} : {};
+  const posTop = positionTop ? {top: positionTop} : {};
+  const tintCol = tintColor ? {tintColor: light[tintColor]} : {};
   return (
     <Image
       style={[imageSize, w, h, pos, posTop, tintCol] as ImageStyle}
@@ -54,4 +54,8 @@ const styles = StyleSheet.create({
     width: 155,
     height: 134,
   },
+  productComboItem:{
+    width:108,
+    height:134,
+  }
 });

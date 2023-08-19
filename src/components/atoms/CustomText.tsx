@@ -37,7 +37,7 @@ const CustomText = ({
   let mTop = marginTop != null ? {marginTop: marginTop} : {marginTop: 8};
   let maxW = maxWidth ? {maxWidth: maxWidth} : {};
   let lineH = lineHeight ? {lineHeight: lineHeight} : {};
-  let justifyText = justify ? {textAlign: justify} : {textAlign: 'center'};
+  let justifyText = justify ? {alignSelf: justify} : {};
   let textDecoration = textDecor ? {textDecorationLine: textDecor} : {};
 
   return (

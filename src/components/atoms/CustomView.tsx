@@ -1,5 +1,6 @@
 import {ScrollView, StyleSheet, View, ViewStyle} from 'react-native';
 import React from 'react';
+import { screenHeight } from '../../utils/helper';
 
 type Props = {
   children: any;
@@ -20,16 +21,18 @@ const CustomView = ({
   height,
   alignItems,
 }: Props) => {
-  let row = hasRow ? {flexDirection: 'row', flex: 0} : {};
-  let justifyContent = justify ? {justifyContent: justify} : {};
-  let w = width ? {width: width} : {};
-  let h = height ? {height: height} : {};
-  let alignI = alignItems ? {alignItems: alignItems} : {alignItems: 'center'};
+  const row = hasRow ? {flexDirection: 'row', flex: 0} : {};
+  const justifyContent = justify ? {justifyContent: justify} : {};
+  const w = width ? {width: width} : {};
+  const h = height ? {height: height} : {};
+  const alignI = alignItems ? {alignItems: alignItems} : {alignItems: 'center'};
   return scrollable ? (
     <ScrollView
-      automaticallyAdjustKeyboardInsets={true}
-      style={[styles.default2, row, justifyContent, w, h, alignI] as ViewStyle}
-      contentContainerStyle={styles.default}>
+    scrollEnabled={true}
+      style={[styles.default2, row, w, h] as ViewStyle}
+      contentContainerStyle={
+        [styles.default, justifyContent, alignI] as ViewStyle
+      }>
       {children}
     </ScrollView>
   ) : (
@@ -47,9 +50,9 @@ export default CustomView;
 const styles = StyleSheet.create({
   default: {
     alignItems: 'center',
+    width: '100%',
   },
   default2: {
-    flex: 1,
   },
   viewDefault: {
     alignItems: 'center',
