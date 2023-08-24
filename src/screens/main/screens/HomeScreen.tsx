@@ -11,17 +11,20 @@ import {FlatList} from 'react-native-gesture-handler';
 import {useMainContext} from '../MainContext';
 import {ItemProduct, ItemProductCombo} from '../../../components/molecules';
 
-// import database from '@react-native-firebase/database';
+import database from '@react-native-firebase/database';
 
 const HomeScreen = () => {
-  // const reference = database().ref('/plants/1');
-  // console.log('Reference:', reference);
-  const [listProducts, setListProducts] = React.useState();
+
+  const [listProducts, setListProducts] = React.useState([]);
+
 
   const {onGetAllProducts} = useMainContext();
 
   React.useEffect(() => {
-    setListProducts(onGetAllProducts);
+    const reference = database().ref('plants').once('value').then(snapshot => {
+      console.log('userdata', snapshot.val())
+      setListProducts(snapshot.val())
+    });
   }, []);
 
   return (

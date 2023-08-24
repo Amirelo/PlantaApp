@@ -19,7 +19,7 @@ import {
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-const tabNav = () => {
+const TabNav = () => {
   return (
     <Tab.Navigator initialRouteName="Home">
       <Tab.Screen
@@ -67,7 +67,7 @@ const MainNavigation = () => {
       <Stack.Screen
         options={{headerShown: false}}
         name="Tab"
-        component={tabNav}
+        component={TabNav}
       />
     </Stack.Navigator>
   );

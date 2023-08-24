@@ -1,9 +1,7 @@
 import React from 'react';
 import {CustomText, CustomView} from '../../../components/atoms';
 
-type Props = {};
-
-const ProfileScreen = (props: Props) => {
+const ProfileScreen = () => {
   return (
     <CustomView hasFlex bgColor="backgroundColor">
       <CustomText>Something</CustomText>
